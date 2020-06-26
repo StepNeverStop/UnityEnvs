@@ -67,5 +67,7 @@ Logs/
 Temp/
 UserSettings/
 Recordings/
+Assets/ML-Agents/Timers/
+Assets/ML-Agents/Timers.meta
 *.DS_Store
 .vscode/
