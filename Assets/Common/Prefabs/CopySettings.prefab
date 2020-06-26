@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AreaPrefab: {fileID: 0}
   CopyGap: {x: 10, y: 0, z: 10}
-  NAgents: 1
+  NAgents: 10

@@ -496,11 +496,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8659507138241750023, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
-      propertyPath: NAgents
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8659507138241750023, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
-        type: 3}
       propertyPath: CopyGap.x
       value: 4
       objectReference: {fileID: 0}
@@ -643,7 +638,6 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 500
   Target: {fileID: 1335969434}
-  IsHardMode: 0
   speed: 10
 --- !u!54 &2092232355
 Rigidbody:
