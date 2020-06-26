@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 8659507138241750020, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8659507138241750020, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
@@ -193,11 +193,6 @@ PrefabInstance:
       propertyPath: AreaPrefab
       value: 
       objectReference: {fileID: 6300093860638907599}
-    - target: {fileID: 8659507138241750023, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
-        type: 3}
-      propertyPath: NAgents
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae, type: 3}
 --- !u!1 &969727060
@@ -339,7 +334,7 @@ Transform:
   m_LocalScale: {x: 5, y: 0.19999993, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1449158395
 PrefabInstance:
@@ -1034,7 +1029,6 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 5000
   Ball: {fileID: 6298691258432418843}
-  IsHardMode: 0
 --- !u!114 &6300487396731477533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,7 +1097,7 @@ Transform:
   - {fileID: 6297718900850493045}
   - {fileID: 6303393903224039757}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6303431242769116767
 Transform:
