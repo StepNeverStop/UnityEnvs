@@ -32,7 +32,7 @@ public class ControlDynamic : MonoBehaviour
         foreach(var dobj in objs)
         {
             dobj.SetActive(true);
-            dobj.transform.position = new Vector3(Random.Range(-1.0f, 1.0f) * (Ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f),
+            dobj.transform.localPosition = new Vector3(Random.Range(-1.0f, 1.0f) * (Ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f),
                                                 0.5f,
                                                 Random.Range(-1.0f, 1.0f) * (Ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f));
             dobj.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;

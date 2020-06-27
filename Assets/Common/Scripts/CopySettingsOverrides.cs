@@ -41,14 +41,21 @@ public class CopySettingsOverrides : MonoBehaviour {
 #endif
             }
 
-            Vector3 AreaSize = AreaPrefab.GetComponent<GetAreaInfo>().GetSize();
+            GetAreaInfo gai = AreaPrefab.GetComponent<GetAreaInfo>();
+            Vector3 AreaSize = new Vector3(10.0f, 0.0f, 10.0f);
+            if (gai != null)
+            {
+                AreaSize = gai.GetSize();
+            }
             Vector3 AreaDistance = AreaSize + CopyGap;
 
             fm = Camera.main.GetComponent<FreedomMonitor>();
             if (fm != null)
             {
                 fm.minHigh = Mathf.Max(AreaSize.x, AreaSize.z) / 2;
-                fm.maxHigh = Mathf.CeilToInt(Mathf.Sqrt(NAgents)) * Mathf.Max(AreaDistance.x, AreaDistance.z) / 2;
+                var width = Mathf.CeilToInt(Mathf.Sqrt(NAgents));
+                width = width % 2 == 0 ? width + 1 : width;
+                fm.maxHigh = width * Mathf.Max(AreaDistance.x, AreaDistance.z) / 2;
             }
 
             int level = 1;

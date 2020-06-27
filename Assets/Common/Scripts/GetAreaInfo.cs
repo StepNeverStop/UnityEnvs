@@ -39,6 +39,7 @@ public class GetAreaInfo : MonoBehaviour
         {
             foreach(Transform t in objs)
             {
+                //Debug.Log(t.name);
                 if (t.name == DefaultBoundName || t.tag == DefaultBoundTag)
                 {
                     BoundObject = t.gameObject;
@@ -46,6 +47,7 @@ public class GetAreaInfo : MonoBehaviour
                 }
             }
         }
+        //Debug.Log(BoundObject);
         size = BoundObject.GetComponent<MeshFilter>().mesh.bounds.size;
         size = new Vector3(size.x * BoundObject.transform.localScale.x, size.y * BoundObject.transform.localScale.y, size.z * BoundObject.transform.localScale.z);
         return size;
@@ -61,9 +63,6 @@ public class GetAreaInfo : MonoBehaviour
                 GetAllChilds(T.GetChild(i));
             }
         }
-        else
-        {
-            objs.Add(T);
-        }
+        objs.Add(T);
     }
 }

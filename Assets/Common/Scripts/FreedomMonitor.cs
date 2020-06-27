@@ -18,10 +18,10 @@ namespace UnityEnvs
 
         [ReadOnly]
         [Tooltip("摄像机的最小高度")]
-        public float minHigh;
+        public float minHigh = 0.0f;
         [ReadOnly]
         [Tooltip("摄像机的最大高度")]
-        public float maxHigh;
+        public float maxHigh = 100.0f;
 
         // Start is called before the first frame update
         void Start()

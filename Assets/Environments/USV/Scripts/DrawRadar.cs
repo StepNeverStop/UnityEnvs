@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class DrawRadar : MonoBehaviour {
+    [Range(0.01f, 0.1f)]
     public float ThetaScale = 0.01f;
     public float radius = 3f;
     private int Size;
@@ -13,11 +14,10 @@ public class DrawRadar : MonoBehaviour {
     }
 
     void Update() {
-        Theta = 0f;
-        Size = (int)((1f / ThetaScale) + 1f);
+        Size = (int)(1f / ThetaScale) + 1;
         LineDrawer.positionCount = Size;
         for (int i = 0; i < Size; i++) {
-            Theta += (2.0f * Mathf.PI * ThetaScale);
+            Theta = 2 * Mathf.PI * ThetaScale * i;
             float x = radius * Mathf.Cos(Theta);
             float y = radius * Mathf.Sin(Theta);
             LineDrawer.SetPosition(i, new Vector3(x, 0, y));

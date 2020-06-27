@@ -403,7 +403,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4041836449609189183, guid: 17899b6b45f6eb14c9496176fd74158b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17899b6b45f6eb14c9496176fd74158b, type: 3}
 --- !u!135 &6235454393819169837
 SphereCollider:

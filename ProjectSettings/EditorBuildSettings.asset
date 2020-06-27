@@ -42,6 +42,6 @@ EditorBuildSettings:
     path: Assets/Environments/FQ/Scenes/RollerBallRay.unity
     guid: 6084166b19ea947119802bae9060eceb
   - enabled: 1
-    path: Assets/Environments/FQ/Scenes/test.unity
+    path: Assets/Test/Scenes/test.unity
     guid: 76b0f52d7ef094563a240316f88da089
   m_configObjects: {}

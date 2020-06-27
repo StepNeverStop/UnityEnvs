@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,8 +118,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    maxJobWorkers: 0
-    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -168,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 1618534589289603515, guid: 17899b6b45f6eb14c9496176fd74158b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1618534589289603515, guid: 17899b6b45f6eb14c9496176fd74158b,
         type: 3}
@@ -192,6 +190,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17899b6b45f6eb14c9496176fd74158b, type: 3}
+--- !u!1 &914835207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5730932355058788236, guid: 121822d721b7d48db850f75bd5027907,
+    type: 3}
+  m_PrefabInstance: {fileID: 1433786908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1275194063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -237,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943719350691982, guid: 5889392e3f05b448a8a06c5def6c2dec, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943719350691982, guid: 5889392e3f05b448a8a06c5def6c2dec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -306,7 +310,7 @@ PrefabInstance:
     - target: {fileID: 8659507138241750020, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8659507138241750020, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
@@ -332,37 +336,15 @@ PrefabInstance:
         type: 3}
       propertyPath: AreaPrefab
       value: 
-      objectReference: {fileID: 1884941569}
+      objectReference: {fileID: 914835207}
     - target: {fileID: 8659507138241750023, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
       propertyPath: NAgents
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae, type: 3}
---- !u!1 &1884941569 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5730932355058788236, guid: 121822d721b7d48db850f75bd5027907,
-    type: 3}
-  m_PrefabInstance: {fileID: 5730932353393499015}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1884941570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884941569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecf60fc5ccd14ec18286daa5a81d654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoundObject: {fileID: 0}
-  DefaultBoundName: Floor
-  DefaultBoundTag: floor
-  size: {x: 0, y: 0, z: 0}
---- !u!1001 &5730932353393499015
+--- !u!1001 &1433786908
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -407,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 5730932355058788234, guid: 121822d721b7d48db850f75bd5027907,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5730932355058788234, guid: 121822d721b7d48db850f75bd5027907,
         type: 3}

@@ -510,11 +510,6 @@ PrefabInstance:
       propertyPath: CopyGap.z
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 8659507138241750023, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
-        type: 3}
-      propertyPath: NAgents
-      value: 81
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae, type: 3}
 --- !u!1 &1963153782
