@@ -263,7 +263,7 @@ PrefabInstance:
     - target: {fileID: 8659507138241750020, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8659507138241750020, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
         type: 3}
@@ -418,7 +418,7 @@ Transform:
   - {fileID: 2092232359}
   - {fileID: 380339404}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1663294060
 MonoBehaviour:
@@ -620,7 +620,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1970047481
 PrefabInstance:
@@ -732,7 +732,6 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 500
   Target: {fileID: 1335969434}
-  IsHardMode: 0
   speed: 10
 --- !u!54 &2092232355
 Rigidbody:
