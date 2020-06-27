@@ -642,7 +642,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 500
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 500
+  MaxStep: 1000
   Target: {fileID: 1335969434}
   speed: 10
 --- !u!54 &2092232355
@@ -772,5 +772,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 1
+  DecisionPeriod: 10
   TakeActionsBetweenDecisions: 0

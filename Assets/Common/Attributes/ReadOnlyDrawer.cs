@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine;
+#endif
 
 public class ReadOnlyAttribute : PropertyAttribute
 {
 
 }
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 public class ReadOnlyDrawer : PropertyDrawer
 {
@@ -23,3 +24,4 @@ public class ReadOnlyDrawer : PropertyDrawer
         GUI.enabled = true;
     }
 }
+#endif
