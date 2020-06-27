@@ -1481,7 +1481,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5484419858615684878}
   - component: {fileID: 5500081960834596044}
-  - component: {fileID: 5595814754464505534}
   - component: {fileID: 5586339858698211158}
   - component: {fileID: 5585878995818973556}
   m_Layer: 0
@@ -1548,14 +1547,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!124 &5595814754464505534
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5482546930705033778}
-  m_Enabled: 1
 --- !u!114 &5586339858698211158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1825,7 +1816,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5477468833982221612}
   - component: {fileID: 5502124329230531874}
-  - component: {fileID: 5596486176633989384}
   - component: {fileID: 5585960940257963222}
   - component: {fileID: 7651088237692094821}
   m_Layer: 0
@@ -1892,14 +1882,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!124 &5596486176633989384
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5482596907803150352}
-  m_Enabled: 1
 --- !u!114 &5585960940257963222
 MonoBehaviour:
   m_ObjectHideFlags: 0

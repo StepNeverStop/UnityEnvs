@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1618534589289603514, guid: 17899b6b45f6eb14c9496176fd74158b,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1618534589289603515, guid: 17899b6b45f6eb14c9496176fd74158b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -188,7 +193,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4041836449609189183, guid: 17899b6b45f6eb14c9496176fd74158b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17899b6b45f6eb14c9496176fd74158b, type: 3}
 --- !u!1 &1335969430
 GameObject:
@@ -503,6 +509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CopyGap.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659507138241750023, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae,
+        type: 3}
+      propertyPath: NAgents
+      value: 81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a0d9e8b97b1ae4aac5f5d29191f2ae, type: 3}

@@ -16,10 +16,19 @@ namespace UnityEnvs
         public float pullSpeed = 0.1f;
         Vector2 currentMousePos;
 
+        [ReadOnly]
+        [Tooltip("摄像机的最小高度")]
+        public float minHigh;
+        [ReadOnly]
+        [Tooltip("摄像机的最大高度")]
+        public float maxHigh;
+
         // Start is called before the first frame update
         void Start()
         {
             cam = Camera.main;
+            minHigh /= Mathf.Tan(Mathf.Deg2Rad * cam.fieldOfView / 2);
+            maxHigh /= Mathf.Tan(Mathf.Deg2Rad * cam.fieldOfView / 2);
         }
 
         // Update is called once per frame
@@ -47,7 +56,7 @@ namespace UnityEnvs
             }
 
             cam_pos.y += Input.GetAxis("Mouse ScrollWheel") * -1 * scrollSpeed;
-            cam_pos.y = Mathf.Clamp(cam_pos.y, 10, 50);
+            cam_pos.y = Mathf.Clamp(cam_pos.y, minHigh, maxHigh);
 
             cam.transform.position = cam_pos;
             cam.transform.rotation = Quaternion.Euler(cam_rot);
