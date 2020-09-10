@@ -29,11 +29,6 @@ TagManager:
   - symbol_O_Goal
   - purpleAgent
   - purpleGoal
-  - static_obj
-  - dynamic_obj
-  - wave
-  - TrainingArea
-  - floor
   layers:
   - Default
   - TransparentFX
