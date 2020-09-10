@@ -26,18 +26,18 @@ public class CubeAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        if (this.transform.position.y < 0)
+        if (this.transform.localPosition.y < 0)
         {
             // If the Agent fell, zero its momentum
             this.rBody.angularVelocity = Vector3.zero;
             this.rBody.velocity = Vector3.zero;
             
         }
-        this.transform.position = new Vector3(Random.Range(-1.0f, 1.0f) * (ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f),
+        this.transform.localPosition = new Vector3(Random.Range(-1.0f, 1.0f) * (ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f),
                                     0.5f,
                                     Random.Range(-1.0f, 1.0f) * (ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f));
         // Move the target to a new spot
-        Target.position = new Vector3(Random.Range(-1.0f, 1.0f) * (ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f),
+        Target.localPosition = new Vector3(Random.Range(-1.0f, 1.0f) * (ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f),
                                     0.5f,
                                     Random.Range(-1.0f, 1.0f) * (ground.transform.localScale.x * 5.0f - transform.localScale.x * 0.5f));
         cs.ResetPosition();

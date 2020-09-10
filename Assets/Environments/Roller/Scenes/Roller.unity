@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1618534589289603514, guid: 17899b6b45f6eb14c9496176fd74158b,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1618534589289603515, guid: 17899b6b45f6eb14c9496176fd74158b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -188,7 +193,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4041836449609189183, guid: 17899b6b45f6eb14c9496176fd74158b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17899b6b45f6eb14c9496176fd74158b, type: 3}
 --- !u!1 &1335969430
 GameObject:
@@ -636,7 +642,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 500
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 500
+  MaxStep: 1000
   Target: {fileID: 1335969434}
   speed: 10
 --- !u!54 &2092232355
@@ -766,5 +772,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 1
+  DecisionPeriod: 10
   TakeActionsBetweenDecisions: 0

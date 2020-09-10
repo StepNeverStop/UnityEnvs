@@ -69,5 +69,8 @@ UserSettings/
 Recordings/
 Assets/ML-Agents/Timers/
 Assets/ML-Agents/Timers.meta
+Assets/Test/
+Assets/Test.meta
 *.DS_Store
 .vscode/
+/ProjectSettings/EditorBuildSettings.asset

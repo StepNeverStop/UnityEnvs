@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using System;
+using UnityEngine.SceneManagement;
+using UnityEnvs;
 
 public class CopySettingsOverrides : MonoBehaviour {
     [Tooltip("Training Area. Tag with TrainingArea of GameObject will be searched if not specified.")]
@@ -12,7 +14,10 @@ public class CopySettingsOverrides : MonoBehaviour {
     [Tooltip("Deault copy nums.")]
     public int NAgents = 1;
 
+    private FreedomMonitor fm;
+
     private void Awake() {
+        
         List<string> commandLineArgs = new List<string>(Environment.GetCommandLineArgs());
         int index = commandLineArgs.IndexOf("--n_agents");
         if (index != -1) {
@@ -36,7 +41,22 @@ public class CopySettingsOverrides : MonoBehaviour {
 #endif
             }
 
-            Vector3 AreaSize = AreaPrefab.GetComponent<GetAreaInfo>().GetSize() + CopyGap;
+            GetAreaInfo gai = AreaPrefab.GetComponent<GetAreaInfo>();
+            Vector3 AreaSize = new Vector3(10.0f, 0.0f, 10.0f);
+            if (gai != null)
+            {
+                AreaSize = gai.GetSize();
+            }
+            Vector3 AreaDistance = AreaSize + CopyGap;
+
+            fm = Camera.main.GetComponent<FreedomMonitor>();
+            if (fm != null)
+            {
+                fm.minHigh = Mathf.Max(AreaSize.x, AreaSize.z) / 2;
+                var width = Mathf.CeilToInt(Mathf.Sqrt(NAgents));
+                width = width % 2 == 0 ? width + 1 : width;
+                fm.maxHigh = width * Mathf.Max(AreaDistance.x, AreaDistance.z) / 2;
+            }
 
             int level = 1;
             int curr = 0;
@@ -44,7 +64,7 @@ public class CopySettingsOverrides : MonoBehaviour {
             int[] direction = new int[] { 1, -1, -1, 1 };
 
             for (int i = 0; i < NAgents - 1; i++) {
-                Instantiate(AreaPrefab, new Vector3(matIndex[0] * AreaSize.x, 0, matIndex[1] * AreaSize.z), Quaternion.identity);
+                Instantiate(AreaPrefab, new Vector3(matIndex[0] * AreaDistance.x, 0, matIndex[1] * AreaDistance.z), Quaternion.identity);
 
                 if (Math.Abs(matIndex[curr % 2]) == level && curr == 3) {
                     curr = 0;

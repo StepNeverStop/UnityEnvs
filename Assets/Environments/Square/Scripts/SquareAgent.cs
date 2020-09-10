@@ -49,8 +49,8 @@ namespace Square {
         }
 
         public override void Heuristic(float[] actionsOut) {
-            actionsOut[0] = Input.GetAxis("Horizontal");
-            actionsOut[1] = Input.GetAxis("Vertical");
+            actionsOut[1] = Input.GetAxis("Horizontal");
+            actionsOut[0] = Input.GetAxis("Vertical");
         }
     }
 

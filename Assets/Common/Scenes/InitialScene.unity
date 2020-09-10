@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -87,7 +94,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -137,12 +146,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454007566}
   m_Enabled: 1
-  serializedVersion: 8
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -152,6 +163,24 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -159,12 +188,15 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &454007568
@@ -219,9 +251,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -273,8 +306,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2002107819}
   - component: {fileID: 2002107818}
+  - component: {fileID: 2002107820}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TrainingController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,3 +340,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002107820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002107817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab251ecbd241c364d994b7b554757d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneAssets:
+  - {fileID: 102900000, guid: c3f4d99fc7b38c24fb3e690228ac0c4b, type: 3}
+  - {fileID: 102900000, guid: 0e999ea7dddf8784cb921a572c52df13, type: 3}
+  - {fileID: 102900000, guid: eb293e401e44a4dbab58be9b7cda7bbd, type: 3}
+  - {fileID: 102900000, guid: 1fc7f57185f3d444da350cc6a46b82b3, type: 3}
+  - {fileID: 102900000, guid: 1ac9f158a6aae3e4884c1b535ba26587, type: 3}
+  - {fileID: 102900000, guid: b0fdaa67fced32244a989db2da888e6f, type: 3}
+  - {fileID: 102900000, guid: 89f46b79444f6674798cab602c249cfc, type: 3}
+  - {fileID: 102900000, guid: 8bb6592a02e75bc47ad7bf64a0c28d89, type: 3}
+  - {fileID: 102900000, guid: 6084166b19ea947119802bae9060eceb, type: 3}
+  - {fileID: 102900000, guid: 4f06f30992994244fa89a1e50be8252c, type: 3}
+  - {fileID: 102900000, guid: 88db9f993a1a6a54da3be15ab6c32132, type: 3}
+  - {fileID: 102900000, guid: 7ff1e6cd341948a4e9b0d0d10f11f15a, type: 3}
+  - {fileID: 102900000, guid: b1e3c1836d453d84daef606d06ec34c2, type: 3}
+  - {fileID: 102900000, guid: b9ac0cbf961bf4dacbfa0aa9c0d60aaa, type: 3}
+  - {fileID: 102900000, guid: 35c41099ceec44889bdbe95ed86c97ac, type: 3}
+  - {fileID: 102900000, guid: f899ee9525f964c7f8373e2d183a9dbf, type: 3}
+  - {fileID: 102900000, guid: cf1d119a8748d406e90ecb623b45f92f, type: 3}
+  - {fileID: 102900000, guid: 2c29359d4c9fe49219b21cd83e246596, type: 3}
+  - {fileID: 102900000, guid: cb09636e2bfd74254939fe22b12c28e1, type: 3}
+  - {fileID: 102900000, guid: d9a4e7d08037d49c895555d4fe344764, type: 3}
+  - {fileID: 102900000, guid: 11583205ab5b74bb4bb1b9951cf9e437, type: 3}
+  - {fileID: 102900000, guid: c6fdbb551d80c435abe6fc911b1ea11f, type: 3}
+  - {fileID: 102900000, guid: d6d6a33ed0e18459a8d61817d600978a, type: 3}
+  - {fileID: 102900000, guid: ae8cc75939e3e4d07a79c8c6a08b54f4, type: 3}
+  - {fileID: 102900000, guid: 35afbc150a44b4aa69ca04685486b5c4, type: 3}
+  - {fileID: 102900000, guid: e58a3c10c43de4b6b91b7149838d1dfb, type: 3}
+  - {fileID: 102900000, guid: e81622878c805493fb0e3d0e0141e7c6, type: 3}
+  - {fileID: 102900000, guid: f8055e5dfa04643559678426a82225c1, type: 3}
+  - {fileID: 102900000, guid: 4e253b26ff06f4e22aba1d43ed181ada, type: 3}
+  - {fileID: 102900000, guid: 9b4d2e53a4f424f99abdf2c214a50435, type: 3}
+  - {fileID: 102900000, guid: 25c0c9e81e55c4e129e1a5c0ac254100, type: 3}
+  - {fileID: 102900000, guid: dbc5c542957ef47bd8ebe87fc1000c37, type: 3}
+  - {fileID: 102900000, guid: de11f7032ae5745aeb4e112adc650114, type: 3}
+  - {fileID: 102900000, guid: 7a4fa83df52e84d36bef11bfee2aa16d, type: 3}
+  - {fileID: 102900000, guid: 0e36e7aacd30440a0b5ae54969361b04, type: 3}
+  - {fileID: 102900000, guid: 79d5d2687bfbe45f5b78bd6c04992e0d, type: 3}
+  - {fileID: 102900000, guid: 36160dc1faf384eaa9a65a73f6942ce3, type: 3}
+  - {fileID: 102900000, guid: 56024e8d040d344709949bc88128944d, type: 3}
+  - {fileID: 102900000, guid: 2d569bb9615d8480f82ec9eab5fb4cf2, type: 3}
+  - {fileID: 102900000, guid: 80092d34341764cf1aaeb2757d92e794, type: 3}
